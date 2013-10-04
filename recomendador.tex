@@ -6,11 +6,39 @@
 % ************************************
 % -------------- CONFIGURAÇÔES GERAIS --------
 %*************************************
+% Definindo novas cores
+\usepackage{xcolor}
+\definecolor{verde}{rgb}{0.25,0.5,0.35}
+\definecolor{jpurple}{rgb}{0.5,0,0.35}
 \usepackage[utf8]{inputenc}
 \usepackage[portuges]{babel}
 %\usepackage{minted}
-
+\usepackage{listings}
+\usepackage{graphicx}
 \usepackage{tikz}
+\lstset{
+  language=Java,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{jpurple}\bfseries,
+  stringstyle=\color{red},
+  commentstyle=\color{verde},
+  morecomment=[s][\color{blue}]{/**}{*/},
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{cyan!10}, 
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+  tabsize=4
+}
+
+
+
+\graphicspath{{img/}}
 
 % ************************************
 % -------------- CONFIG BEAMER -------------
@@ -593,7 +621,65 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 	\subsection{Modelagem de Entidades}
 		\begin{frame}{Diagrama Entidade-Relacionamento}
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,height=6.7cm]{recomendador-ER.png}
+	\caption{Diagrama de Entidade Relacionamento}
+	\label{rec-ER}
+\end{figure}
+
 		\end{frame}
+
+% ************************************
+% -------------- SLIDE 14 -------------
+%*************************************
+\begin{frame}{Mapeamento Objeto Relacional}
+	
+	\begin{block}{Java Persistence API}
+É uma especificação que descreve o gerenciamento de dados relacionais em aplicações. Tal gerenciamento é realizado de maneira automatizada e transparente para tabelas em um banco de dados relacional, usando metadados que descrevem o mapeamento entre objetos e o banco de dados.	
+	\end{block}		
+
+\end{frame}	
+
+% ************************************
+% -------------- SLIDE 15 -------------
+%*************************************
+\begin{frame}[fragile]{Mapeamento Objeto Relacional}
+	\begin{columns}[c]
+		\column{.6\textwidth}	
+			\begin{lstlisting}
+@Entity
+public class usuario {
+	@Id
+	@Column
+	private int id;
+
+	@Column
+	private String nome;
+
+	@Column
+	private String senha;
+		
+	@Column
+	private String email;		
+	
+	@OneToMany
+	private List<UsuarioCha> cha;
+}
+			\end{lstlisting}							
+		\column{.3\textwidth}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio=true,height=5cm]{usuario-ER.png}
+				\caption{Tabela Usuario}
+				\label{usuario-ER}
+			\end{figure}	
+	\end{columns}
+\end{frame}
+
+
+
+
 
 
 
