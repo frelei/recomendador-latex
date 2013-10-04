@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.10pt}
-\select@language {portuges}
-\beamer@sectionintoc {1}{Concep\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{An\IeC {\'a}lise de Requisitos}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Caso de Uso}{5}{0}{1}
-\beamer@sectionintoc {2}{Projeto e Desenvolvimento}{13}{0}{2}
-\beamer@subsectionintoc {2}{1}{Modelagem de Entidades}{13}{0}{2}
