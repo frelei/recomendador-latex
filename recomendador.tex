@@ -16,7 +16,10 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{tikz}
-\lstset{
+\usepackage{color}
+
+\lstdefinestyle{Java}
+{
   language=Java,
   basicstyle=\ttfamily\small, 
   keywordstyle=\color{jpurple}\bfseries,
@@ -36,6 +39,24 @@
   tabsize=4
 }
 
+\lstdefinestyle{HTML}
+{
+	language=HTML,	
+	basicstyle=\scriptsize\ttfamily\tiny,
+    keywordstyle=\color{jpurple}\bfseries\ttfamily,
+    commentstyle=\color{gray}\ttfamily,
+	backgroundcolor=\color{cyan!10},
+	showspaces=false, 
+	extendedchars=true, 	
+	showstringspaces=false,
+	breakautoindent=true,
+	breaklines=true,
+	captionpos=b,
+    xleftmargin=0pt,
+    tabsize=4,
+	stringstyle=\color{blue}
+	%escapechar=| % Escape to LaTeX between |...|
+}
 
 
 \graphicspath{{img/}}
@@ -215,7 +236,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -259,7 +280,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\draw[ultra thick, ->] (5,3.5) to (8,7.5);
 		\draw[ultra thick, ->] (4,3.5) to (3,6.6);
@@ -305,7 +326,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -350,7 +371,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -402,7 +423,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -460,7 +481,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -518,7 +539,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -583,7 +604,7 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\actor{1.5}{5}{green}
 
 			% Recomendador
-		\stringBox{2.5}{2.5}{Recoacomp}{red}
+		\stringBox{2.5}{2.5}{Recoacomp}{Apricot}
 
 		\repositorio{8.5}{2.5}		
 		\stringBoxSmall{9.7}{1.5}{Repositório}{SkyBlue}	
@@ -641,6 +662,142 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 % ************************************
 % -------------- SLIDE 15 -------------
 %*************************************
+\subsection{MVC}
+	\begin{frame}[fragile]{View}
+		\begin{block}{Facelets}
+Facelets é uma linguagem de declaração página, que é usado para construir JavaServer Faces exibições usando modelos de estilo HTML e para a construção de árvores de componentes.
+		\end{block}
+	\end{frame}	
+
+% ************************************
+% -------------- SLIDE 16 -------------
+%*************************************
+\begin{frame}[fragile]{Facelets - Página}
+		
+	\begin{lstlisting}[style=HTML]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<title>Exemple</title>
+</h:head>
+ 
+<h:body> 
+	<h:form>
+		<h:panelGrid columns="2">
+		<h:outputText value="Nome: " />
+			<h:inputText value="#{user.name}" />
+			<h:outputText value="Email: " />
+			<h:inputText value="#{user.email}" />		
+		</h:panelGrid>
+		<h:commandButton value="action" action="#{user.action()}" />
+	</h:form>
+</h:body> 
+</html>
+	\end{lstlisting}		
+
+\end{frame}
+
+% ************************************
+% -------------- SLIDE 17 -------------
+%*************************************
+\begin{frame}{Página}
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[keepaspectratio=true,height=5cm]{facelets-1rec.png}
+		\caption{Página Gerada}
+		\label{rec-ER}
+\end{figure}
+
+		\end{frame}
+
+% ************************************
+% -------------- SLIDE 18 -------------
+%*************************************
+\begin{frame}[fragile]{Criando Componente}
+	\begin{lstlisting}[style=HTML]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+
+<composite:interface>
+
+		<composite:attribute name="typeAction" />
+
+</composite:interface>
+<composite:implementation>
+
+	<h:panelGrid columns="2" >
+			<h:outputText value="Name: " />
+			<h:inputText value="#{user.name}" />
+			<h:outputText value="Email: " />
+			<h:inputText value="#{user.email}" />		
+	</h:panelGrid>
+	<h:commandButton value="#{cc.attrs.typeAction}" action="#{user.action()}" />
+
+</composite:implementation>
+
+</body>
+</html>	
+	\end{lstlisting}
+\end{frame}
+
+
+
+
+% ************************************
+% -------------- SLIDE 19 -------------
+%*************************************
+\begin{frame}[fragile]{Utilizando Componente}
+	\begin{lstlisting}[style=HTML]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:util="http://java.sun.com/jsf/composite/components/util"> 
+<h:head>
+	<title>Exemple</title>
+</h:head> 
+<h:body> 
+	<h:form >
+		<util:componente  typeAction="Save" />
+		<util:componente typeAction="Update" />
+	</h:form>
+</h:body> 
+</html>
+	\end{lstlisting}
+\end{frame}
+
+% ************************************
+% -------------- SLIDE 20 -------------
+%*************************************
+\begin{frame}{Página com Componente}
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[keepaspectratio=true,height=3.5cm]{facelets-2rec.png}
+		\caption{Página com Componente}
+		\label{rec-ER}
+\end{figure}
+
+		\end{frame}
+
+
+
+
+% ************************************
+% -------------- SLIDE 21 -------------
+%*************************************
 \subsection{Modelagem de Entidades}
 		\begin{frame}{Diagrama Entidade-Relacionamento}
 
@@ -654,10 +811,11 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 		\end{frame}
 
 % ************************************
-% -------------- SLIDE 16 -------------
+% -------------- SLIDE 22 -------------
 %*************************************
 \begin{frame}{Mapeamento Objeto Relacional}
 	
+
 	\begin{block}{Java Persistence API}
 É uma especificação que descreve o gerenciamento de dados relacionais em aplicações. Tal gerenciamento é realizado de maneira automatizada e transparente para tabelas em um banco de dados relacional, usando metadados que descrevem o mapeamento entre objetos e o banco de dados.	
 	\end{block}		
@@ -665,12 +823,12 @@ O recomendador deve fornecer Objetos de Aprendizagem que supram a necessidade da
 \end{frame}	
 
 % ************************************
-% -------------- SLIDE 17 -------------
+% -------------- SLIDE 23 -------------
 %*************************************
 \begin{frame}[fragile]{Mapeamento Objeto Relacional}
 	\begin{columns}[c]
 		\column{.6\textwidth}	
-			\begin{lstlisting}
+			\begin{lstlisting}[style=Java]
 @Entity
 public class usuario {
 	@Id
@@ -701,7 +859,7 @@ public class usuario {
 \end{frame}
 
 % ************************************
-% -------------- SLIDE 18 -------------
+% -------------- SLIDE 24 -------------
 %*************************************
 
 
